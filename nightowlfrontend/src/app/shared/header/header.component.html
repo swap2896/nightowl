@@ -1,0 +1,52 @@
+<mat-toolbar [color]="themeColor" class="header">
+    <mat-toolbar-row>
+      <span><mat-icon style="font-size: 30px;">
+        local_library
+      </mat-icon></span>&nbsp;
+      <span>Night Owl</span>
+      <span style="flex: 1 1 auto"></span>
+      <button mat-icon-button matTooltip="Home" routerLink="/">
+        <mat-icon>
+          home
+        </mat-icon>
+      </button>
+      <button mat-icon-button matTooltip="Dashboard" routerLink="/dashboard/">
+        <mat-icon>
+          dashboard
+        </mat-icon>
+      </button>
+      <button mat-icon-button (click)="toggleDarkMode()" matTooltip="Toggle dark theme">
+        <mat-icon>
+          dark_mode
+        </mat-icon>
+      </button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item (click)="themechanged('primary')">
+          <mat-icon [color]="themeColor === 'primary' ? 'primary' : 'no-color'">
+            <ng-container *ngIf="themeColor === 'primary'; else noRadio">radio_button_checked</ng-container>
+          </mat-icon>
+          Primary
+        </button>
+        <button mat-menu-item (click)="themechanged('warn')">
+          <mat-icon [color]="themeColor === 'warn' ? 'warn' : 'no-color'">
+            <ng-container *ngIf="themeColor === 'warn'; else noRadio">radio_button_checked</ng-container>
+          </mat-icon>
+          Warn
+        </button>
+        <button mat-menu-item (click)="themechanged('accent')">
+          <mat-icon [color]="themeColor === 'accent' ? 'accent' : 'no-color'">
+            <ng-container *ngIf="themeColor === 'accent'; else noRadio">radio_button_checked</ng-container>
+          </mat-icon>
+          Accent
+        </button>
+      </mat-menu>
+      <button mat-button [matMenuTriggerFor]="menu" class="menu-button" matTooltip="Select a theme color">
+        {{ themeColor }}
+      </button>
+      <ng-template #noRadio>
+        radio_button_unchecked
+      </ng-template>
+      
+    </mat-toolbar-row>
+    
+  </mat-toolbar>

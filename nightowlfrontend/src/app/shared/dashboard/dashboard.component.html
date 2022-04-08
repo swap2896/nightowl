@@ -1,0 +1,22 @@
+<br>
+<mat-spinner color="{{themeColor}}"  style="margin:0 auto; top:70px" 
+mode="indeterminate" *ngIf="isloading"></mat-spinner>
+  <div class="container" style="margin-top: 70px;">
+    
+    <div fxLayout="row" fxLayoutAlign="space-betwen center" fxLayoutGap="5px" class="stats-cards" style="padding:1px;">
+        <mat-card fxFlex="50"  *ngIf="books_by_rating.length>0">
+          <!-- <mat-card-title>Number Of Books Group By Rating</mat-card-title> -->
+      <app-rating [books_by_rating]="books_by_rating"></app-rating>
+      </mat-card>
+      <mat-card fxFlex="50" *ngIf="books_by_category.length>0">
+          <app-books-by-category [books_by_category]="books_by_category" *ngIf="books_by_category.length>0"></app-books-by-category>
+      </mat-card>
+      </div><br>
+      <div fxLayout="row" fxLayoutAlign="space-betwen center" fxLayoutGap="1px" class="stats-cards" style="padding:1px;">
+        <mat-card fxFlex="100" *ngIf="topratedbooks.length>0">
+          <mat-card-title>Top 10 Rated Books</mat-card-title>
+      <app-topratedbooks [topratedbooks]="topratedbooks"></app-topratedbooks>
+      </mat-card>
+      </div>
+    
+    </div>

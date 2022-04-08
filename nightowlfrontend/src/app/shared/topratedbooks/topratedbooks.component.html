@@ -1,0 +1,15 @@
+<table class="table table-striped" style="padding: 10px;">
+    <tr class="mat-header-row">
+        <th class="mat-header-cell">S.No</th>
+        <th class="mat-header-cell">Name of Book</th>
+        <th class="mat-header-cell">Author's Name</th>
+        <th class="mat-header-cell">Rating</th>
+      </tr>
+      <tr class="mat-row" *ngFor="let book of topratedbooks;let i=index">
+        <td class="mat-cell">{{i+1}}</td>
+        <td class="mat-cell" (click)="redirect(book[0])" style="color: orange; cursor: pointer;"><u>{{book[1]}}</u></td>
+        <td class="mat-cell">{{book[2]}}</td>
+        <td class="mat-cell" style="color: gold;"><mat-icon *ngFor="let key of counter(book[3])">star</mat-icon></td>
+        <!-- <td class="mat-cell" style="color: gold;">{{book[3]}} star</td> -->
+      </tr> 
+  </table>

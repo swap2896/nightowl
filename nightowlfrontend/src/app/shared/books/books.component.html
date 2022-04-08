@@ -1,0 +1,26 @@
+<br>
+<mat-spinner color="{{themecolor}}"style="margin:0 auto; top:50px" 
+mode="indeterminate" *ngIf="isloading"></mat-spinner>
+  <div class="container" style="margin-top: 70px;">
+    <div class="row">
+              <div *ngFor="let book of books" style="width: 320px; padding:10px" [routerLink]="['bookdetails/', book[2]]">
+              <mat-card class="example-card card">
+                <img mat-card-image src="{{book[0]}}" alt="{{book[5]}}" style="height: 250px; width: 200px; margin-left: auto;
+                margin-right: auto;margin-top: auto;
+                display: block;">
+                <mat-card-content>
+                  <span class="book-content__title" style="margin-left: auto;
+                  margin-right: auto;"><h2>{{book[5]}}</h2> by {{book[3]}}</span>
+                  <p class="book-content__rating" style="margin-left: auto;
+                  margin-right: auto;">Rating: <strong>{{book[9]}} / 5</strong></p>
+                  <mat-chip-list>
+                   <mat-chip style="color: orangered; background-color: yellow;">{{book[10]}}</mat-chip></mat-chip-list>
+                </mat-card-content>
+               
+              </mat-card>
+              <!-- <a [routerLink]="['book/', book[2]]"></a> -->
+              <!-- </div> -->
+              </div>
+    </div>
+    
+

@@ -1,0 +1,37 @@
+<br>
+<mat-spinner color="{{themeColor}}"  style="margin:0 auto; top:70px" 
+mode="indeterminate" *ngIf="isloading"></mat-spinner>
+  <div class="container" style="margin-top: 70px;">
+    <div class="row">
+              <div style="width: 40%; padding:10px">
+              <mat-card class="example-card card">
+                <img mat-card-image src="{{book[0]}}" alt="{{book[5]}}" style="height: 400px; width: 300px; margin-left: auto;
+                margin-right: auto;margin-top: auto;
+                display: block;">
+                <mat-card-content>
+                    <a style="width: 300px; margin-left: auto;
+                    margin-right: auto;margin-top: auto; display: block;" mat-raised-button href="{{book[1]}}" target="_blank">Go To Website</a>
+                </mat-card-content>     
+              </mat-card>
+              </div>
+
+              <div style="width: 60%; padding:10px">
+                <mat-card class="example-card card">
+                    <mat-card-title>{{book[5]}}</mat-card-title>
+                    <mat-card-subtitle>by {{book[3]}}</mat-card-subtitle>
+                  <mat-card-content>
+                    <p class="book-content__rating" style="margin-left: auto;
+                    margin-right: auto;">Rating: <strong>{{book[9]}} / 5</strong></p>
+                    <mat-chip-list>
+                      <mat-chip style="color: orangered; background-color: yellow;">{{book[10]}}</mat-chip></mat-chip-list>
+                      <mat-divider></mat-divider><br>
+                    <p>ISBN:{{book[8]}}</p>
+                    <p>Pages: {{book[7]}}</p>
+                    <mat-divider></mat-divider><br>
+                    <p>{{book[4]}}</p>
+                  </mat-card-content>     
+                </mat-card>
+                </div>
+    </div>
+    
+

@@ -1,0 +1,10 @@
+<table class="table table-striped" style="padding: 10px; height: 333px;">
+    <tr class="mat-header-row">
+        <th class="mat-header-cell">Rating</th>
+        <th class="mat-header-cell">Number of Books</th>
+      </tr>
+      <tr class="mat-row" *ngFor="let rating of books_by_rating">
+        <td class="mat-cell" style="color: gold;"><mat-icon *ngFor="let key of counter(rating[0])">star</mat-icon></td>
+        <td class="mat-cell">{{rating[1]}}</td>
+      </tr>
+  </table>
